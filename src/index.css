@@ -1,0 +1,73 @@
+:root {
+  --vivid-sky-blue: #49c6e5ff;
+  --sky-blue-crayola: rgb(132, 221, 241);
+  --snow: #fffbfaff;
+  --mountain-meadow: rgb(110, 255, 231);
+  --middle-blue-green: #8bd7d2ff;
+}
+
+body, html, #root, .App {
+  padding: 0;
+  margin: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-image: linear-gradient(45deg, var(--mountain-meadow), var(--sky-blue-crayola), var(--vivid-sky-blue), var(--mountain-meadow));
+  background-size: 200vw 200vh;
+  background-position: -75vw -75vh;
+  animation: movingbackground 5s ease-in-out alternate-reverse infinite;
+}
+
+@keyframes movingbackground {
+  0% {
+    background-position: -75vw -75vh;
+  }
+  100% {
+    background-position: -25vw, -25vh;
+  }
+}
+
+.App {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 150%;
+  height: 150%;
+  top: -25%;
+  left: -25%;
+  background-image: radial-gradient(white 6%, transparent 10%);
+  background-size: 40px 40px;
+  background-position: 0 0;
+  animation-name: backgroundmovement;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+h1 {
+  margin: 0;
+}
+
+@keyframes backgroundmovement {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 80px 40px;
+  }
+}
