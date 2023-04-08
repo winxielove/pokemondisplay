@@ -1,11 +1,30 @@
 import { useState } from 'react'
+import Stadium from './Components/Stadium'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [tab, setTab] = useState("s")
+
+  const renderSwitch = () => {
+    switch (tab) {
+      case "s":
+        return (
+          <Stadium />
+        )
+    
+      default:
+        return (
+          <></>
+        )
+    }
+  }
 
   return (
     <div className="App">
-      <h1>dies</h1>
+      <div className='Window'>
+        <div className='WindowContent'>
+          {renderSwitch()}
+        </div>
+      </div>
     </div>
   )
 }
