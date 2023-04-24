@@ -19,7 +19,10 @@ const PokemonDisplay = ({ pokemon }) => {
             console.log(d)
             setData(d)
         })
-    }, [])
+        .catch((e) => {
+          setData(null)
+        })
+    }, [pokemon])
     
 
   return (

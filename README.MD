@@ -1,11 +1,26 @@
-mini inlines:
+Effect syntax:
 
-imm = immune [imm]
+{
 
-x>y = x to y [imm>burn]
+    name: "unique name",
+    trigger: "name of the trigger that sets off this effect"
+    effect: {
+        targets: [
+            $
+        ]
+    }
 
-?e = if e [?burned]
+}
 
-x/y = y of x [effects/burn]
+target syntax:
+1. $ = self
+2. x = field slot according to x
+3. !$ = everybody but self
+4. !x = everybody but x
 
-#m* = multiply m by # [1.5damage*]
+field positioning:
+
+Challenger
+1 3
+0 2
+Defender
