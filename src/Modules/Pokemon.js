@@ -32,10 +32,30 @@ nature is the nature of a pokemon, passed in as an object. syntax:
 }
 
 ability is either an integer or an ability passed on to the pokemon.
-    integer inputs pull from the species' list of potential abilities,
+    integer inputs pull from the species' list of potential abilities [sorted alphabetically],
     whereas giving an ability will directly replace and override any species ability
 
+ivs is an object containing the ivs, ranged 0-31
+    these ivs can be one of the following
+    spatk
+    attack
+    spdef
+    defense
+    speed
+    hp
 
+evs is an object containing the evs, ranged 0-252, that total up to =<510 EVs total among all stats.
+    these evs can be one of the following
+    spatk
+    attack
+    spdef
+    defense
+    speed
+    hp
+
+moves is a list of moves that the pokemon knows. Each move in the list is a Move object
+
+shiny is a boolean that determines whether or not the pokemon is shiny
 */
 class Pokemon {
     constructor
@@ -64,11 +84,19 @@ class Pokemon {
         ability = -1,
         ivs = { hp: 0, attack: 0, defense: 0, spattack: 0, spdefense: 0, speed: 0},
         evs = { hp: 0, attack: 0, defense: 0, spattack: 0, spdefense: 0, speed: 0},
-        moves = [{}],
+        moves = [],
         shiny = false
         ) {
             this.name = name
             this.species = species
+            this.form = form
+            this.level = level
+            this.nature = nature
+            this.ability = ability
+            this.ivs = ivs
+            this.evs = evs
+            this.moves = moves
+            this.shiny = shiny
     }
 }
 
